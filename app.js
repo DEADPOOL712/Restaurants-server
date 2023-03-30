@@ -7,7 +7,8 @@ const cors = require('cors');
 // configs
 // API_KEY = '2c569aae15f54917a0c8ecfd02bec6db';
 // API_KEY = '6f75e303644c4cd486bf940475f6c441';
-API_KEY = '131f49c708294ce8bc1db138e1087034';
+// API_KEY = '131f49c708294ce8bc1db138e1087034';
+API_KEY = '308dbf0f4d12422886b741e9e3060762';
 
 // APP USE
 app.use(bodyParser.json());
