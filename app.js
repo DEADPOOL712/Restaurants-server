@@ -12,6 +12,7 @@ app.use(function (req, res, next) {
     'http://localhost:3000',
     'https://react-restaurant-inky.vercel.app/random',
     'https://react-restaurant-inky.vercel.app/',
+    'https://restaurant-server-fv28.onrender.comp/random',
   ];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
