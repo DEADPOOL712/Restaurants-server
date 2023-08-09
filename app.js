@@ -11,24 +11,25 @@ API_KEY = '6f75e303644c4cd486bf940475f6c441';
 // API_KEY = '308dbf0f4d12422886b741e9e3060762';
 
 //CORS config
-const allowedOrigins = [
-  'https://react-restaurant-inky.vercel.app/random',
-  'https://react-restaurant-inky.vercel.app/recipe',
-  'https://react-restaurant-inky.vercel.app/search',
-  'http://localhost:3000/',
-];
+// const allowedOrigins = [
+//   'https://react-restaurant-inky.vercel.app/random',
+//   'https://react-restaurant-inky.vercel.app/recipe',
+//   'https://react-restaurant-inky.vercel.app/search',
+//   'https://react-restaurant-inky.vercel.app/',
+//   'http://localhost:3000/',
+// ];
 
-const corsOptions = {
-  origin: (origin, callback) => {
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-};
-
-app.use(cors(corsOptions));
+// const corsOptions = {
+//   origin: (origin, callback) => {
+//     if (allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   },
+// };
+// app.use(cors(corsOptions));
+app.use(cors());
 
 // APP USE
 app.use(bodyParser.json());
