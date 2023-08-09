@@ -10,10 +10,27 @@ API_KEY = '6f75e303644c4cd486bf940475f6c441';
 // API_KEY = '131f49c708294ce8bc1db138e1087034';
 // API_KEY = '308dbf0f4d12422886b741e9e3060762';
 
+//CORS config
+const allowedOrigins = [
+  'https://react-restaurant-inky.vercel.app/',
+  'http://localhost:3000/',
+];
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+};
+
+app.use(cors(corsOptions));
+
 // APP USE
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
 
 // RESPONSE RANDOME TOP PICKS
 app.post('/random', (req, res) => {
