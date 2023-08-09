@@ -12,7 +12,9 @@ API_KEY = '6f75e303644c4cd486bf940475f6c441';
 
 //CORS config
 const allowedOrigins = [
-  'https://react-restaurant-inky.vercel.app/',
+  'https://react-restaurant-inky.vercel.app/random',
+  'https://react-restaurant-inky.vercel.app/recipe',
+  'https://react-restaurant-inky.vercel.app/search',
   'http://localhost:3000/',
 ];
 
