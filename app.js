@@ -4,32 +4,29 @@ const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 8080;
 const axios = require('axios');
 const cors = require('cors');
-// configs
-// API_KEY = '2c569aae15f54917a0c8ecfd02bec6db';
 API_KEY = '6f75e303644c4cd486bf940475f6c441';
-// API_KEY = '131f49c708294ce8bc1db138e1087034';
-// API_KEY = '308dbf0f4d12422886b741e9e3060762';
 
-//CORS config
-// const allowedOrigins = [
-//   'https://react-restaurant-inky.vercel.app/random',
-//   'https://react-restaurant-inky.vercel.app/recipe',
-//   'https://react-restaurant-inky.vercel.app/search',
-//   'https://react-restaurant-inky.vercel.app/',
-//   'http://localhost:3000/',
-// ];
+app.use(function (req, res, next) {
+  // res.header("Access-Control-Allow-Origin", "*");
+  const allowedOrigins = [
+    'http://localhost:3000',
+    'https://react-restaurant-inky.vercel.app/random',
+    'https://react-restaurant-inky.vercel.app/',
+  ];
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+  );
+  res.header('Access-Control-Allow-credentials', true);
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, UPDATE');
+  next();
+});
 
-// const corsOptions = {
-//   origin: (origin, callback) => {
-//     if (allowedOrigins.includes(origin)) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error('Not allowed by CORS'));
-//     }
-//   },
-// };
-// app.use(cors(corsOptions));
-app.use(cors());
+// app.use(cors());
 
 // APP USE
 app.use(bodyParser.json());
